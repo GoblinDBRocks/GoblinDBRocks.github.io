@@ -1,0 +1,272 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>GoblinDB</title>
+<meta name="description" content="An amazing, simple and fun database for humans">
+
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="img/favicon.ico" type="image/x-icon"
+
+<link rel="apple-touch-icon" href="img/manifest/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="16x16" href="img/manifest/icon-16x16.png">
+<link rel="apple-touch-icon" sizes="32x32" href="img/manifest/icon-32x32.png">
+<link rel="apple-touch-icon" sizes="192x192" href="img/manifest/icon-192x192.png">
+<link rel="apple-touch-icon" sizes="512x512" href="img/manifest/icon-512x512.png">
+
+<meta name="msapplication-TileImage" content="img/favicon.ico">
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-tap-highlight" content="no">
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=10" />
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,maximum-scale=1.0"/>
+
+<link rel="stylesheet" type="text/css" href="css/estilos.css">
+<link rel="stylesheet" type="text/css" href="css/prism.css">
+
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js/modernizr.custom.js"></script>
+
+</head>
+
+<body>
+
+	<header>
+		
+		<div class="contenedor">
+			<h1 class="logo"><a href="index.html" target="_blank">GoblinDB</a></h1>
+
+			<a class="btn-menu" id="btn-menu"><div class="montadito"></div></a>
+			<nav role="navigation" class="navegacion">
+				<ul class="menu">
+					<li><a>Philosophy</a></li>
+					<li><a>Demo</a></li>
+					<li><a>Documentation</a></li>
+					<!--<li><a href="#">Download</a></li>-->
+					<li><a href="https://github.com/GoblinDBRocks/GoblinDB" target="_blank">Github</a></li>
+				</ul>
+			</nav>
+
+			<div class="contenedor-intro">
+				<figure class="goblin-intro">
+					<img class="img-goblin" src="img/goblin.svg" alt="GoblinDB" title="GoblinDB">
+					<figcaption class="intro">
+						<h2 class="subtitulo">Fear the Goblin!</h2>
+						<p class="parrafo">An amazing, simple<span>and fun database <i>for humans</i></span></p>
+					</figcaption>
+				</figure>
+			</div>
+
+			<a id="btnIrFilosofia" class="icon-arrowDown"></a>
+		</div>
+	
+	</header>
+	
+
+	<main role="main">
+		
+		<article class="mod-filosofia">
+			<div class="contenedor">
+				<h2 class="titulo">Goblin Philosophy</h2>
+				<ul class="listado-filosofia">
+					<li><i class="icon-uno"></i><p class="parrafo">Coding is fun, so databases must be fun too.</p></li>
+					<li><i class="icon-dos"></i><p class="parrafo">Data is the king.</p></li>
+					<li><i class="icon-tres"></i><p class="parrafo">Data should be stored in the system as a file when a change happend.</p></li>
+					<li><i class="icon-cuatro"></i><p class="parrafo">Data storage in the system must be hackable.</p></li>
+					<li><i class="icon-cinco"></i><p class="parrafo">The database can lead or connect your server component</p></li>
+					<li><i class="icon-seis"></i><p class="parrafo">Events are great... because we are asynchronous</p></li>
+					<li><i class="icon-siete"></i><p class="parrafo">We prefer facts over promises: facts are there, promises maybe yes or not. In fact, we're talking about callbacks.</p></li>
+					<li><i class="icon-ocho"></i><p class="parrafo">Data is not the only stuff that can be store in a database.</p></li>
+					<li><i class="icon-nueve"></i><p class="parrafo">We prefer ambush functions over lambda functions. As you know... we're talking about anonymous functions.</p></li>				
+				</ul>
+			</div>
+		</article>
+
+		<article class="mod-demo">
+			<div class="contenedor">
+				<h2 class="titulo">Demo</h2>
+				<p class="parrafo">You can run a demo in 4 steps!</p>
+				<ol class="listado-demo">
+					<li>Clone this repository
+					<pre><code class="language-markup">git clone https://github.com/UlisesGascon/GoblinDB</code></pre>
+					</li>
+					<li>Enter in the folder
+					<pre><code class="language-markup">cd GoblinDB</code></pre>
+					</li>
+					<li>Install the dependencies
+					<pre><code class="language-markup">npm install</code></pre>
+					</li>
+					<li>Run <i>fear_the_goblin.js</i>
+					<pre><code class="language-markup">node fear_the_goblin.js</code></pre>
+					</li>
+				</ol>
+			</div>
+		</article>
+
+		<article class="mod-documentacion">
+			<div class="contenedor">
+				<h2 class="titulo">Documentation</h2>
+				<p class="subtitulo">Add it to your Node.js project</p>
+				<ul class="listado-pasos">
+					<li><p class="parrafo">In your terminal...</p>
+					<pre><code class="language-javascript">npm install goblindb --save</code></pre>
+					</li>
+					<li><p class="parrafo">In your file..</p>
+					<pre><code class="language-javascript">var GDB = require("goblindb"); 
+var http = require("http");
+
+var goblinDB = GDB();</code></pre>
+					</li>
+				</ul>
+
+				<p class="subtitulo">Reitrieving data</p>
+				<p class="parrafo">By default Goblin will create an empty json file as database storage, if the file exist it will added to Goblin.</p>
+				<p class="parrafo">Just for the example, current database status... as you can see is a JSON file:</p>
+				<ul class="listado-pasos">
+					<li><p class="parrafo">goblin_bd.json:</p>
+					<pre><code class="language-json">{"hello":"world!","array":["aaaa",true,5],"objectData":{"property": 1}}</code></pre>
+					</li>
+					<li><p class="parrafo">get. Return the information from a key or the whole database</p>
+					<pre><code class="language-javascript">var GDB = require("goblindb");
+var http = require("http");
+
+var goblinDB = GDB();
+
+console.log(goblinDB.get())
+// {"hello":"world!","array":["aaaa",true,5],"objectData":{"property": 1}}
+
+console.log(goblinDB.get("hello"))
+// {"hello":"world!"}</code></pre>
+					</li>
+				</ul>
+
+				<p class="subtitulo">Saving data</p>
+				<p class="parrafo">You have many options to save data. As Goblin is a key/value database you need to know what is the key that you want to use/create.</p>
+				<p class="parrafo">You can storage all the data that you want except functions. Until the next release.</p>
+				<ul class="listado-pasos">
+					<li><p class="parrafo">set(key, data). Write or replace data to a defined key (optional)</p>
+					<pre><code class="language-javascript">var GDB = require("goblindb");
+var http = require("http");
+
+var goblinDB = GDB();
+
+// set data in db.admin
+goblinDB.set({"name": "Ulises", "role": "developer"}, "admin");
+
+// set data in root
+goblinDB.set({"hello": "Human...!"});</code></pre>
+					</li>
+					<li><p class="parrafo">push(data). Write data in a new key (random name added)</p>
+					<pre><code class="language-javascript">var GDB = require("goblindb");
+var http = require("http");
+
+var goblinDB = GDB();
+
+goblinDB.push({"name": "Ulises", "role": "developer"})</code></pre>
+					</li>
+					<li><p class="parrafo">update(data, key). Add and modify data to a defined key</p>
+					<pre><code class="language-javascript">var GDB = require("goblindb");
+var http = require("http");
+
+var goblinDB = GDB();
+
+goblinDB.update({"name": "CodingCarlos", "friends": ["Ulises", "Jose"]}, "admin");</code></pre>
+					</li>
+				</ul>
+
+				<p class="subtitulo">Fun with Events</p>
+				<p class="parrafo">You can use events in order to react to changes in the database. All the events are managed internally by Goblin inside as hooks.</p>
+				<p class="parrafo">You can specify the trigger event:</p>
+				<ul class="listado-opciones">
+					<li>add</li>
+					<li>update</li>
+					<li>delete</li>	
+					<li>reconfigure</li>
+					<li>change, in any case it will be triggered.</li>
+				</ul>
+				<p class="parrafo">The event will return an object that contains previous data and current data. At the moment the the listeners can be added to the database root, but in the next release it will possible to focus in on or more specific paths</p>
+
+				<ul class="listado-pasos">
+					<li><p class="parrafo"><i>on()</i>, Add a new function to be triggered on a specific change.</p>
+					<pre><code class="language-javascript">var GDB = require("goblindb");
+var http = require("http");
+
+var goblinDB = GDB();
+
+goblinDB.on('change', function(changes){
+    console.log("cambio:", changes)
+    console.log("====================")
+});</code></pre>
+					</li>
+					<li><p class="parrafo"><i>off()</i>, Remove a previous record event</p>
+					<pre><code class="language-javascript">var GDB = require("goblindb");
+var http = require("http");
+
+var goblinDB = GDB();
+
+goblinDB.on('change', function(changes){
+    console.log("cambio:", changes)
+    console.log("====================")
+});
+
+// more code...
+
+goblinDB.off('change', function(changes){
+    console.log("cambio:", changes)
+    console.log("====================")
+});</code></pre>
+					</li>
+				</ul>
+
+
+				<p class="subtitulo">Extra features</p>
+				<p class="parrafo">Some extra features that maybe can help you.</p>
+				<ul class="listado-pasos">
+					<li><p class="parrafo"><i>getConfig() & updateConfig</i>, modify/replace/extend configuration.</p>
+					<pre><code class="language-javascript">var GDB = require("goblindb");
+var http = require("http");
+
+var goblinDB = GDB();
+
+console.log(goblinDB.getConfig())
+// { logPrefix: '[GoblinDB]', file: './goblin_bd.json', recordChanges: true }
+
+goblinDB.updateConfig({ logPrefix: '[GoblinDB-modify]'})
+
+console.log(goblinDB.getConfig())
+// { logPrefix: '[GoblinDB-modify]', file: './goblin_bd.json', recordChanges: true }</code></pre>
+					</li>
+					<li><p class="parrafo"><i>stopStorage() & startStorage()</i>, enable/disable the storage in disk.</p>
+					<pre><code class="language-javascript">var GDB = require("goblindb");
+var http = require("http");
+
+var goblinDB = GDB();
+
+goblinDB.stopStorage();
+
+// more code that will not touch be stored in the disk...
+
+goblinDB.startStorage(); 
+// Now the current GoblinDB will be stored in disk and it will keep doing it</code></pre>
+					</li>
+				</ul>
+
+				<p class="subtitulo">Testing</p>
+				<p class="parrafo">You can test your changes...</p>
+				<pre><code class="language-json">npm test</code></pre>
+
+			</div>
+		</article>
+
+	</main>
+
+	<footer></footer>
+
+	<div class="icon-btnIrArriba" id="btnIrArriba"></div>
+
+	<script type="text/javascript" src="js/prism.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+
+</body>
+</html>
