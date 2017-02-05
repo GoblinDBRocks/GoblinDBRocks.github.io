@@ -154,12 +154,19 @@ goblinDB.set({"name": "Ulises", "role": "developer"}, "admin");
 // set data in root
 goblinDB.set({"hello": "Human...!"});</code></pre>
 					</li>
-					<li><p class="parrafo">push(data). Write data in a new key (random name added)</p>
+					<li><p class="parrafo">push(data). Write data in a new key (random name added, like MewhnDIutVhm3hulgTaAJj6Utb47GOwe)</p>
 					<pre><code class="language-javascript">var GDB = require("goblindb");
 
 var goblinDB = GDB();
 
-goblinDB.push({"name": "Ulises", "role": "developer"})</code></pre>
+goblinDB.push({"name": "Ulises", "role": "developer"})
+goblinDB.push(["other-data", true, 123])
+
+console.log(goblinDB.get());
+/* Console:
+{ MewhnDIutVhm3hulgTaAJj6Utb47GOwe: { name: 'Ulises', role: 'developer' },
+  j3zKjX7WpdTDpRPNVWGE1jPMHEtUPWq6: [ 'other-data', true, 123 ] }
+*/</code></pre>
 					</li>
 					<li><p class="parrafo">update(data, key). Add and modify data to a defined key</p>
 					<pre><code class="language-javascript">var GDB = require("goblindb");
@@ -284,7 +291,7 @@ goblinDB.ambush.add({
 	}
 });
 
-goblinDB.ambush.run("simple-function");</code></pre>
+goblinDB.ambush.run("simple-function"); //Console -> Hello World</code></pre>
 					</li>
 
 					<li><p class="parrafo">Add an ambush function with arguments.</p>
@@ -302,7 +309,7 @@ goblinDB.ambush.add({
 	}
 });
 
-goblinDB.ambush.run("argument-function", "World");</code></pre>
+goblinDB.ambush.run("argument-function", "World"); //Console -> Hello World</code></pre>
 					</li>
 
 					<li><p class="parrafo">Add an ambush function with arguments and callback.</p>
@@ -321,7 +328,7 @@ goblinDB.ambush.add({
 
 goblinDB.ambush.run("callback-function", "World", function(data){
 	console.log("The Callback data:", data);
-});</code></pre>
+}); //Console -> The Callback data: Hello World</code></pre>
 					</li>
 
 
@@ -376,7 +383,7 @@ goblinDB.ambush.add({
 });
 
 var copy = goblinDB.ambush.details("simple-function");
-copy.action()</code></pre>
+copy.action() //Console -> Hello World</code></pre>
 					</li>
 
 					<li><p class="parrafo">Get a list of all the ambush function available in the database.</p>
