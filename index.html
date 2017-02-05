@@ -33,7 +33,7 @@
 <body>
 
 	<header>
-		
+
 		<div class="contenedor">
 			<h1 class="logo"><a href="index.html" target="_blank">GoblinDB</a></h1>
 
@@ -60,12 +60,12 @@
 
 			<a id="btnIrFilosofia" class="icon-arrowDown"></a>
 		</div>
-	
+
 	</header>
-	
+
 
 	<main role="main">
-		
+
 		<article class="mod-filosofia">
 			<div class="contenedor">
 				<h2 class="titulo">Goblin Philosophy</h2>
@@ -78,7 +78,7 @@
 					<li><i class="icon-seis"></i><p class="parrafo">Events are great... because we are asynchronous</p></li>
 					<li><i class="icon-siete"></i><p class="parrafo">We prefer facts over promises: facts are there, promises maybe yes or not. In fact, we're talking about callbacks.</p></li>
 					<li><i class="icon-ocho"></i><p class="parrafo">Data is not the only stuff that can be store in a database.</p></li>
-					<li><i class="icon-nueve"></i><p class="parrafo">We prefer ambush functions over lambda functions. As you know... we're talking about anonymous functions.</p></li>				
+					<li><i class="icon-nueve"></i><p class="parrafo">We prefer ambush functions over lambda functions. As you know... we're talking about anonymous functions.</p></li>
 				</ul>
 			</div>
 		</article>
@@ -110,11 +110,10 @@
 				<p class="subtitulo">Add it to your Node.js project</p>
 				<ul class="listado-pasos">
 					<li><p class="parrafo">In your terminal...</p>
-					<pre><code class="language-javascript">npm install goblindb --save</code></pre>
+					<pre><code class="language-bash">npm install goblindb --save</code></pre>
 					</li>
 					<li><p class="parrafo">In your file..</p>
-					<pre><code class="language-javascript">var GDB = require("goblindb"); 
-var http = require("http");
+					<pre><code class="language-javascript">var GDB = require("goblindb");
 
 var goblinDB = GDB();</code></pre>
 					</li>
@@ -129,7 +128,6 @@ var goblinDB = GDB();</code></pre>
 					</li>
 					<li><p class="parrafo">get. Return the information from a key or the whole database</p>
 					<pre><code class="language-javascript">var GDB = require("goblindb");
-var http = require("http");
 
 var goblinDB = GDB();
 
@@ -147,7 +145,6 @@ console.log(goblinDB.get("hello"))
 				<ul class="listado-pasos">
 					<li><p class="parrafo">set(key, data). Write or replace data to a defined key (optional)</p>
 					<pre><code class="language-javascript">var GDB = require("goblindb");
-var http = require("http");
 
 var goblinDB = GDB();
 
@@ -159,7 +156,6 @@ goblinDB.set({"hello": "Human...!"});</code></pre>
 					</li>
 					<li><p class="parrafo">push(data). Write data in a new key (random name added)</p>
 					<pre><code class="language-javascript">var GDB = require("goblindb");
-var http = require("http");
 
 var goblinDB = GDB();
 
@@ -167,7 +163,6 @@ goblinDB.push({"name": "Ulises", "role": "developer"})</code></pre>
 					</li>
 					<li><p class="parrafo">update(data, key). Add and modify data to a defined key</p>
 					<pre><code class="language-javascript">var GDB = require("goblindb");
-var http = require("http");
 
 var goblinDB = GDB();
 
@@ -181,7 +176,7 @@ goblinDB.update({"name": "CodingCarlos", "friends": ["Ulises", "Jose"]}, "admin"
 				<ul class="listado-opciones">
 					<li>add</li>
 					<li>update</li>
-					<li>delete</li>	
+					<li>delete</li>
 					<li>reconfigure</li>
 					<li>change, in any case it will be triggered.</li>
 				</ul>
@@ -190,7 +185,6 @@ goblinDB.update({"name": "CodingCarlos", "friends": ["Ulises", "Jose"]}, "admin"
 				<ul class="listado-pasos">
 					<li><p class="parrafo"><i>on()</i>, Add a new function to be triggered on a specific change.</p>
 					<pre><code class="language-javascript">var GDB = require("goblindb");
-var http = require("http");
 
 var goblinDB = GDB();
 
@@ -201,7 +195,6 @@ goblinDB.on('change', function(changes){
 					</li>
 					<li><p class="parrafo"><i>off()</i>, Remove a previous record event</p>
 					<pre><code class="language-javascript">var GDB = require("goblindb");
-var http = require("http");
 
 var goblinDB = GDB();
 
@@ -225,7 +218,6 @@ goblinDB.off('change', function(changes){
 				<ul class="listado-pasos">
 					<li><p class="parrafo"><i>getConfig() & updateConfig</i>, modify/replace/extend configuration.</p>
 					<pre><code class="language-javascript">var GDB = require("goblindb");
-var http = require("http");
 
 var goblinDB = GDB();
 
@@ -239,7 +231,6 @@ console.log(goblinDB.getConfig())
 					</li>
 					<li><p class="parrafo"><i>stopStorage() & startStorage()</i>, enable/disable the storage in disk.</p>
 					<pre><code class="language-javascript">var GDB = require("goblindb");
-var http = require("http");
 
 var goblinDB = GDB();
 
@@ -247,13 +238,161 @@ goblinDB.stopStorage();
 
 // more code that will not touch be stored in the disk...
 
-goblinDB.startStorage(); 
+goblinDB.startStorage();
 // Now the current GoblinDB will be stored in disk and it will keep doing it</code></pre>
 					</li>
 				</ul>
 
+
+
+
+
+				<p class="subtitulo">Ambush Functions (Lambda Functions)</p>
+				<p class="parrafo">You can store also anonymous functions in GoblinDB, we call this functions Ambush.</p>
+				<p class="parrafo">Once you add Ambush functions to GoblinDB... the system will save them under a .goblin file. </p>
+				<p class="parrafo">This feature will allow you to bring your functions togther with your data to a new projects.</p>
+				<p class="parrafo">You can perform few basic operations to ambush functions through Goblin specific methods. They are very similar to regular data manipulation methods.</p>
+				<ul class="listado-opciones">
+					<li><b>add</b></li>
+					<li><b>update</b></li>
+					<li><b>remove</b></li>
+					<li><b>run</b></li>
+					<li><b>details</b></li>
+					<li><b>list</b></li>
+				</ul>
+
+				<p class="parrafo">All the ambush functions has an specific setup. Internally they are objects with specific methods ans properties.</p>
+				<ul class="listado-opciones">
+					<li><b>id</b>, <i>this reference must be unique and also a string.</i></li>
+					<li><b>description</b>, <i>this will add additional information about the current ambush function, it is an optional property and must be a string.</i></li>
+					<li><b>category</b>, <i>this array will help us to filter our ambush functions in the future.</i></li>
+					<li><b>action</b>, <i>this is the key feature. This method can be executed from GoblinDB on demand. Only two optional parameters are acepted: arguments (no specific data type) and callback (function).</i></li>
+				</ul>
+
+				<ul class="listado-pasos">
+					<li><p class="parrafo">Add a simple ambush function.</p>
+					<pre><code class="language-javascript">var GDB = require("goblindb");
+
+var goblinDB = GDB();
+
+goblinDB.ambush.add({
+	id: "simple-function",
+	category: ["documentation"],
+	description: "This is a simple function",
+	action: function(){
+		console.log("Hello World");
+	}
+});
+
+goblinDB.ambush.run("simple-function");</code></pre>
+					</li>
+
+					<li><p class="parrafo">Add an ambush function with arguments.</p>
+					<p class="parrafo"><b>Note:</b> <i>Only one argument can bre provided by run method. In case that you need more than one argument, please use an array or an object.</i></p>
+					<pre><code class="language-javascript">var GDB = require("goblindb");
+
+var goblinDB = GDB();
+
+goblinDB.ambush.add({
+	id: "argument-function",
+	category: ["documentation"],
+	description: "This is an ambush function with arguments",
+	action: function(argument){
+		console.log("Hello", argument);
+	}
+});
+
+goblinDB.ambush.run("argument-function", "World");</code></pre>
+					</li>
+
+					<li><p class="parrafo">Add an ambush function with arguments and callback.</p>
+					<pre><code class="language-javascript">var GDB = require("goblindb");
+
+var goblinDB = GDB();
+
+goblinDB.ambush.add({
+	id: "callback-function",
+	category: ["documentation"],
+	description: "This is an ambush function with arguments and callback",
+	action: function(argument cb){
+		cb("Hello " + argument);
+	}
+});
+
+goblinDB.ambush.run("callback-function", "World", function(data){
+	console.log("The Callback data:", data);
+});</code></pre>
+					</li>
+
+
+					<li><p class="parrafo">Remove an ambush function.</p>
+					<pre><code class="language-javascript">var GDB = require("goblindb");
+
+var goblinDB = GDB();
+
+goblinDB.ambush.add({
+	id: "simple-function",
+	category: ["documentation"],
+	description: "This is a simple function",
+	action: function(){
+		console.log("Hello World");
+	}
+});
+
+goblinDB.ambush.remove("simple-function");</code></pre>
+					</li>
+
+
+					<li><p class="parrafo">Update an ambush function.</p>
+					<pre><code class="language-javascript">var GDB = require("goblindb");
+
+var goblinDB = GDB();
+
+goblinDB.ambush.add({
+	id: "simple-function",
+	category: ["documentation"],
+	description: "This is a simple function",
+	action: function(){
+		console.log("Hello World");
+	}
+});
+
+goblinDB.ambush.update("simple-function", {"category": ["updated-documentation"]});</code></pre>
+					</li>
+
+
+					<li><p class="parrafo">Get the details about an ambush function.</p>
+					<pre><code class="language-javascript">var GDB = require("goblindb");
+
+var goblinDB = GDB();
+
+goblinDB.ambush.add({
+	id: "simple-function",
+	category: ["documentation"],
+	description: "This is a simple function",
+	action: function(){
+		console.log("Hello World");
+	}
+});
+
+var copy = goblinDB.ambush.details("simple-function");
+copy.action()</code></pre>
+					</li>
+
+					<li><p class="parrafo">Get a list of all the ambush function available in the database.</p>
+					<p class="parrafo"><b>Note:</b> <i>You can filter by categories too.</i></p>
+					<pre><code class="language-javascript">var GDB = require("goblindb");
+
+var goblinDB = GDB();
+
+console.log("All the Ambush functions:", goblinDB.ambush.details());
+console.log("All the Ambush functions related to documentation:", goblinDB.ambush.details("documentation"));</code></pre>
+					</li>
+
+				</ul>
+
 				<p class="subtitulo">Testing</p>
-				<p class="parrafo">You can test your changes...</p>
+				<p class="parrafo">You can test your changes in the GoblinDB Core...</p>
 				<pre><code class="language-json">npm test</code></pre>
 
 			</div>
